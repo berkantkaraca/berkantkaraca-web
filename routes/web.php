@@ -7,6 +7,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\CertificateController;
+use App\Http\Controllers\Admin\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
@@ -28,6 +29,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('experiences', ExperienceController::class);
         Route::resource('portfolios', PortfolioController::class);
         Route::resource('certificates', CertificateController::class);
+        Route::resource('contacts', ContactController::class);
     });
 });
 

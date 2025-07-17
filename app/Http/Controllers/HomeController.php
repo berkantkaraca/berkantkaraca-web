@@ -9,6 +9,7 @@ use App\Models\Skill;
 use App\Models\Experience;
 use App\Models\Portfolio;
 use App\Models\Certificate;
+use App\Models\Contact;
 
 class HomeController extends Controller
 {
@@ -48,6 +49,10 @@ class HomeController extends Controller
                                   ->orderBy('sort_order')
                                   ->get();
 
-        return view('index', compact('about', 'educations', 'skills', 'experiences', 'portfolios', 'certificates'));
+        $contact = Contact::where('is_active', true)
+                         ->orderBy('sort_order')
+                         ->first();
+
+        return view('index', compact('about', 'educations', 'skills', 'experiences', 'portfolios', 'certificates', 'contact'));
     }
 }

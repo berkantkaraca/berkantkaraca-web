@@ -12,7 +12,11 @@
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            <a href="tel:+905393480388" style="text-decoration: none;">+90 539 348 03 88</a>
+            @if($contact && $contact->phone)
+              <a href="tel:{{ $contact->phone }}" style="text-decoration: none;">{{ $contact->phone }}</a>
+            @else
+              <a href="tel:+905393480388" style="text-decoration: none;">+90 539 348 03 88</a>
+            @endif
           </div>
         </div>
       </div>
@@ -24,7 +28,11 @@
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            <a style="text-decoration: none;" href="mailto:berkantkaracatr@gmail.com">berkantkaracatr@gmail.com</a>
+            @if($contact && $contact->email)
+              <a style="text-decoration: none;" href="mailto:{{ $contact->email }}">{{ $contact->email }}</a>
+            @else
+              <a style="text-decoration: none;" href="mailto:berkantkaracatr@gmail.com">berkantkaracatr@gmail.com</a>
+            @endif
           </div>
         </div>
       </div>
@@ -36,7 +44,11 @@
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            Başakşehir, İstanbul, Türkiye
+            @if($contact && $contact->address)
+              {{ $contact->address }}
+            @else
+              Başakşehir, İstanbul, Türkiye
+            @endif
           </div>
         </div>
       </div>
@@ -48,13 +60,40 @@
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            <a class="nav-link d-inline" href="https://www.linkedin.com/in/berkantkaraca" title="LinkedIn"
-              target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a class="nav-link d-inline" href="https://www.github.com/berkantkaraca" title="Github" target="_blank">
-              <i class="fab fa-github"></i> Github
-            </a>
+            @if($contact && ($contact->linkedin_url || $contact->github_url || $contact->twitter_url || $contact->facebook_url || $contact->instagram_url))
+              @if($contact->linkedin_url)
+                <a class="nav-link d-inline" href="{{ $contact->linkedin_url }}" title="LinkedIn" target="_blank">
+                  <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+              @endif
+              @if($contact->github_url)
+                <a class="nav-link d-inline" href="{{ $contact->github_url }}" title="Github" target="_blank">
+                  <i class="fab fa-github"></i> Github
+                </a>
+              @endif
+              @if($contact->twitter_url)
+                <a class="nav-link d-inline" href="{{ $contact->twitter_url }}" title="Twitter" target="_blank">
+                  <i class="fab fa-twitter"></i> Twitter
+                </a>
+              @endif
+              @if($contact->facebook_url)
+                <a class="nav-link d-inline" href="{{ $contact->facebook_url }}" title="Facebook" target="_blank">
+                  <i class="fab fa-facebook"></i> Facebook
+                </a>
+              @endif
+              @if($contact->instagram_url)
+                <a class="nav-link d-inline" href="{{ $contact->instagram_url }}" title="Instagram" target="_blank">
+                  <i class="fab fa-instagram"></i> Instagram
+                </a>
+              @endif
+            @else
+              <a class="nav-link d-inline" href="https://www.linkedin.com/in/berkantkaraca" title="LinkedIn" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a class="nav-link d-inline" href="https://www.github.com/berkantkaraca" title="Github" target="_blank">
+                <i class="fab fa-github"></i> Github
+              </a>
+            @endif
           </div>
         </div>
       </div>

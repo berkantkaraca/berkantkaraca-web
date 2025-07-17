@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             ExperienceSeeder::class,
             PortfolioSeeder::class,
             CertificateSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }
