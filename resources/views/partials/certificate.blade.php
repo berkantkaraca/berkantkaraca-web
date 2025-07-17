@@ -9,33 +9,56 @@
       </p>
     </div>
     <div class="row">
-      @php
-        $certificatesPath = public_path('images/certificates');
-        $certificates = [];
-        if (is_dir($certificatesPath)) {
-          $files = array_diff(scandir($certificatesPath), array('.', '..'));
-          $certificates = array_filter($files, function($file) use ($certificatesPath) {
-            return is_file($certificatesPath . '/' . $file) && in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png', 'gif', 'webp']);
-          });
-        }
-      @endphp
-      
-      @forelse($certificates as $certificate)
-        <div class="col-md-3 mb-4">
-          <div class="card" data-aos="fade" data-aos-delay="100">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#certificateModal" data-bs-image="{{ asset('images/certificates/' . $certificate) }}" class="image-hover">
-              <img src="{{ asset('images/certificates/' . $certificate) }}" class="card-img-top" style="object-fit: cover; width: 235px; height: 166px;" alt="Certificate" loading="lazy">
-              <div class="overlay"><i class="fas fa-search-plus"></i></div>
-            </a>
+      @if(isset($certificates) && $certificates->count() > 0)
+        @foreach($certificates as $index => $certificate)
+          <div class="col-md-3 mb-4">
+            <div class="card" data-aos="fade" data-aos-delay="{{ ($index + 1) * 100 }}">
+              @if($certificate->image_path)
+                <a href="#" data-bs-toggle="modal" data-bs-target="#certificateModal" data-bs-image="{{ $certificate->image_url }}" data-bs-title="{{ $certificate->title }}" class="image-hover">
+                  <img src="{{ $certificate->image_url }}" class="card-img-top" style="object-fit: cover; width: 235px; height: 166px;" alt="{{ $certificate->title }}" loading="lazy">
+                  <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </a>
+              @else
+                <div class="card-img-top d-flex align-items-center justify-content-center bg-light" style="height: 166px;">
+                  <i class="fas fa-certificate text-muted" style="font-size: 3rem;"></i>
+                </div>
+              @endif
+              <div class="card-body px-2 py-2">
+                <h6 class="card-title mb-1">{{ $certificate->title }}</h6>
+                <small class="text-muted">{{ $certificate->issuer }} - {{ $certificate->issue_date->format('Y') }}</small>
+              </div>
+            </div>
           </div>
-        </div>
-      @empty
-        <div class="col-12">
-          <div class="text-center">
-            <p class="text-muted">Henüz sertifika eklenmemiş.</p>
+        @endforeach
+      @else
+        @php
+          $certificatesPath = public_path('images/certificates');
+          $certificates = [];
+          if (is_dir($certificatesPath)) {
+            $files = array_diff(scandir($certificatesPath), array('.', '..'));
+            $certificates = array_filter($files, function($file) use ($certificatesPath) {
+              return is_file($certificatesPath . '/' . $file) && in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+            });
+          }
+        @endphp
+        
+        @forelse($certificates as $certificate)
+          <div class="col-md-3 mb-4">
+            <div class="card" data-aos="fade" data-aos-delay="100">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#certificateModal" data-bs-image="{{ asset('images/certificates/' . $certificate) }}" class="image-hover">
+                <img src="{{ asset('images/certificates/' . $certificate) }}" class="card-img-top" style="object-fit: cover; width: 235px; height: 166px;" alt="Certificate" loading="lazy">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+              </a>
+            </div>
           </div>
-        </div>
-      @endforelse
+        @empty
+          <div class="col-12">
+            <div class="text-center">
+              <p class="text-muted">Henüz sertifika eklenmemiş.</p>
+            </div>
+          </div>
+        @endforelse
+      @endif
     </div>
   </div>
 </div>
@@ -60,8 +83,11 @@
   certificateModal.addEventListener('show.bs.modal', function(event) {
     var button = event.relatedTarget;
     var imageSrc = button.getAttribute('data-bs-image');
+    var title = button.getAttribute('data-bs-title') || 'Sertifika';
     var modalImage = certificateModal.querySelector('#modalImage');
+    var modalTitle = certificateModal.querySelector('#certificateModalLabel');
     modalImage.src = imageSrc;
+    modalTitle.textContent = title;
   });
 </script>
 
