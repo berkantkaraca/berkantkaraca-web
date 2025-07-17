@@ -117,6 +117,21 @@
                             </div>
                         </div>
 
+                        <!-- User Management -->
+                        <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-users text-gray-600 text-2xl mr-3"></i>
+                                    <h4 class="text-lg font-semibold text-gray-900">Kullanıcı Yönetimi</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">Kullanıcıları ve rollerini yönetin</p>
+                                <a href="{{ route('admin.users.index') }}" class="btn btn-outline-dark">
+                                    {{ __('Yönet') }}
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
                         
                     </div>
                 </div>
