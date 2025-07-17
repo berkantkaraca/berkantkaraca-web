@@ -1,19 +1,19 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
                     <h3 class="text-lg font-semibold mb-4">{{ __("Welcome to Admin Dashboard!") }}</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- About Yönetimi -->
-                        <div class="bg-blue-100 dark:bg-blue-900 rounded-lg p-6">
+                        <div class="bg-blue-100 rounded-lg p-6">
                             <div class="flex items-center">
                                 <div class="p-3 rounded-full bg-blue-600 text-white">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,8 +21,8 @@
                                     </svg>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100">About Yönetimi</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Hakkımda bölümünü yönetin</p>
+                                    <h4 class="text-lg font-semibold text-gray-900">About Yönetimi</h4>
+                                    <p class="text-gray-600">Hakkımda bölümünü yönetin</p>
                                 </div>
                             </div>
                             <div class="mt-4">
@@ -33,7 +33,7 @@
                         </div>
 
                         <!-- Portfolio Yönetimi (Gelecek) -->
-                        <div class="bg-green-100 dark:bg-green-900 rounded-lg p-6 opacity-50">
+                        <div class="bg-green-100 rounded-lg p-6 opacity-50">
                             <div class="flex items-center">
                                 <div class="p-3 rounded-full bg-green-600 text-white">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,8 +41,8 @@
                                     </svg>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Portfolio Yönetimi</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Projelerinizi yönetin (Yakında)</p>
+                                    <h4 class="text-lg font-semibold text-gray-900">Portfolio Yönetimi</h4>
+                                    <p class="text-gray-600">Projelerinizi yönetin (Yakında)</p>
                                 </div>
                             </div>
                             <div class="mt-4">
@@ -53,7 +53,7 @@
                         </div>
 
                         <!-- Sertifika Yönetimi (Gelecek) -->
-                        <div class="bg-yellow-100 dark:bg-yellow-900 rounded-lg p-6 opacity-50">
+                        <div class="bg-yellow-100 rounded-lg p-6 opacity-50">
                             <div class="flex items-center">
                                 <div class="p-3 rounded-full bg-yellow-600 text-white">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,8 +61,8 @@
                                     </svg>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Sertifika Yönetimi</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Sertifikalarınızı yönetin (Yakında)</p>
+                                    <h4 class="text-lg font-semibold text-gray-900">Sertifika Yönetimi</h4>
+                                    <p class="text-gray-600">Sertifikalarınızı yönetin (Yakında)</p>
                                 </div>
                             </div>
                             <div class="mt-4">
