@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Yeni About Ekle') }}
             </h2>
-            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
+            <a href="{{ route('admin.about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
                 Geri Dön
             </a>
         </div>
@@ -24,7 +24,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('about.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.about.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         
                         <div class="mb-4">
@@ -87,7 +87,7 @@
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 Kaydet
                             </button>
-                            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
+                            <a href="{{ route('admin.about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
                                 İptal
                             </a>
                         </div>

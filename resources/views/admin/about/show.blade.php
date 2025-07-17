@@ -5,10 +5,10 @@
                 {{ __('About Detayları') }}
             </h2>
             <div class="flex space-x-2">
-                <a href="{{ route('about.edit', $about) }}" class="bg-yellow-500 hover:bg-yellow-700 font-bold py-2 px-4 rounded">
+                <a href="{{ route('admin.about.edit', $about) }}" class="bg-yellow-500 hover:bg-yellow-700 font-bold py-2 px-4 rounded">
                     Düzenle
                 </a>
-                <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
+                <a href="{{ route('admin.about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
                     Geri Dön
                 </a>
             </div>

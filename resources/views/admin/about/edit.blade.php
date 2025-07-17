@@ -5,13 +5,13 @@
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 Güncelle
                             </button>
-                            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
+                            <a href="{{ route('admin.about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
                                 İptal
                             </a>
                         </div><h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('About Düzenle') }}
             </h2>
-            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
+            <a href="{{ route('admin.about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
                 Geri Dön
             </a>
         </div>
@@ -31,7 +31,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('about.update', $about) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.about.update', $about) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         
@@ -115,7 +115,7 @@
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 Güncelle
                             </button>
-                            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                            <a href="{{ route('admin.about.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
                                 İptal
                             </a>
                         </div>
