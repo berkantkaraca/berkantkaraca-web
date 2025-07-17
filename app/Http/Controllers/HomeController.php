@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Education;
 use App\Models\Skill;
 use App\Models\Experience;
+use App\Models\Portfolio;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,10 @@ class HomeController extends Controller
                                 ->orderBy('sort_order')
                                 ->get();
 
-        return view('index', compact('about', 'educations', 'skills', 'experiences'));
+        $portfolios = Portfolio::where('is_active', true)
+                              ->orderBy('sort_order')
+                              ->get();
+
+        return view('index', compact('about', 'educations', 'skills', 'experiences', 'portfolios'));
     }
 }
