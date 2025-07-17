@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ExperienceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('about', AboutController::class);
         Route::resource('education', EducationController::class);
         Route::resource('skills', SkillController::class);
+        Route::resource('experiences', ExperienceController::class);
     });
 });
 

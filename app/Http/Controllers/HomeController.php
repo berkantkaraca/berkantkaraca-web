@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Education;
 use App\Models\Skill;
+use App\Models\Experience;
 
 class HomeController extends Controller
 {
@@ -32,6 +33,11 @@ class HomeController extends Controller
             }
         }
 
-        return view('index', compact('about', 'educations', 'skills'));
+        $experiences = Experience::where('is_active', true)
+                                ->orderBy('start_date', 'desc')
+                                ->orderBy('sort_order')
+                                ->get();
+
+        return view('index', compact('about', 'educations', 'skills', 'experiences'));
     }
 }
