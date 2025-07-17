@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Yeni About Ekle') }}
             </h2>
-            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
                 Geri Dön
             </a>
         </div>
@@ -84,10 +84,10 @@
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 Kaydet
                             </button>
-                            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                            <a href="{{ route('about.index') }}" class="bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 rounded">
                                 İptal
                             </a>
                         </div>

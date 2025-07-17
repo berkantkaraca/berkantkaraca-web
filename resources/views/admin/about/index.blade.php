@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('About Yönetimi') }}
             </h2>
-            <a href="{{ route('about.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <a href="{{ route('about.create') }}" class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded">
                 Yeni About Ekle
             </a>
         </div>
@@ -47,21 +47,23 @@
                                         </td>
                                         <td class="py-2 px-4 border-b">{{ $about->created_at->format('d.m.Y H:i') }}</td>
                                         <td class="py-2 px-4 border-b">
-                                            <div class="flex space-x-2">
-                                                <a href="{{ route('about.show', $about) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs">
-                                                    Görüntüle
+                                            <div class="flex items-center space-x-2">
+                                                <a href="{{ route('about.show', $about) }}" class="text-blue-600 hover:text-blue-800">
+                                                    <i class="fas fa-eye"></i>
                                                 </a>
-                                                <a href="{{ route('about.edit', $about) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded text-xs">
-                                                    Düzenle
+                                                <a href="{{ route('about.edit', $about) }}" class="text-yellow-600 hover:text-yellow-800">
+                                                    <i class="fas fa-edit"></i>
                                                 </a>
-                                                <form action="{{ route('about.destroy', $about) }}" method="POST" class="inline" onsubmit="return confirm('Bu kaydı silmek istediğinizden emin misiniz?')">
+                                                <form action="{{ route('about.destroy', $about) }}" method="POST" class="inline">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-xs">
-                                                        Sil
+                                                    <button type="submit" class="text-red-600 hover:text-red-800" onclick="return confirm('Silmek istediğinizden emin misiniz?')">
+                                                        <i class="fas fa-trash"></i>
                                                     </button>
                                                 </form>
                                             </div>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty
