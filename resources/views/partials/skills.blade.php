@@ -7,6 +7,47 @@
       <p class="mx-auto mb-3" style="max-width:600px">Projeler geliştirirken deneyimlediğim teknolojileri
         inceleyebilirsiniz.</p>
     </div>
+    
+    @if(isset($skills) && $skills->count() > 0)
+    <div class="row">
+      @foreach($skills as $category => $categorySkills)
+        <div class="col-md-3 mb-3" data-aos="fade-{{ $loop->index < 2 ? 'right' : 'left' }}" data-aos-delay="{{ ($loop->index + 1) * 100 }}">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                @switch($category)
+                  @case('backend')
+                    Backend
+                    @break
+                  @case('frontend')
+                    Frontend
+                    @break
+                  @case('database')
+                    Database
+                    @break
+                  @case('tools')
+                    Tools
+                    @break
+                  @default
+                    {{ ucfirst($category) }}
+                @endswitch
+              </h5>
+              <div class="d-flex flex-wrap justify-content-center">
+                @foreach($categorySkills as $skill)
+                  <img src="{{ $skill->icon_url }}" 
+                       alt="{{ $skill->name }}{{ $skill->description ? ' - ' . $skill->description : '' }}" 
+                       height="40" 
+                       style="margin-right: 5px; margin-bottom: 5px;" 
+                       title="{{ $skill->name }}" />
+                @endforeach
+              </div>
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+    @else
+    <!-- Fallback - Statik veriler -->
     <div class="row">
       <div class="col-md-3 mb-3" data-aos="fade-right" data-aos-delay="200">
         <div class="card h-100">
@@ -67,5 +108,6 @@
         </div>
       </div>
     </div>
+    @endif
   </div>
 </div>

@@ -42,6 +42,21 @@
                             </div>
                         </div>
 
+                        <!-- Skills Management -->
+                        <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-code text-gray-600 text-2xl mr-3"></i>
+                                    <h4 class="text-lg font-semibold text-gray-900">Yetenekler Yönetimi</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">Teknik yeteneklerinizi yönetin</p>
+                                <a href="{{ route('admin.skills.index') }}" class="btn btn-outline-dark">
+                                    {{ __('Yönet') }}
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
                         <!-- Portfolio Management -->
                         <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                             <div class="p-6">
