@@ -41,7 +41,7 @@
   <link rel="canonical" href="https://berkantkaraca.com.tr">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" />
@@ -113,21 +113,21 @@
   </style>
 
   <!-- Preload critical resources -->
-  <link rel="preload" href="./css/main.css?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ asset('css/main.css') }}?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="./css/bootstrap.min.css?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="./css/font-awesome/css/all.min.css?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="./css/bootstrap-icons/bootstrap-icons.css?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="./css/aos.css?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ asset('css/bootstrap.min.css') }}?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ asset('css/font-awesome/css/all.min.css') }}?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ asset('css/bootstrap-icons/bootstrap-icons.css') }}?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ asset('css/aos.css') }}?ver=1.2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- Fallback for browsers without JS -->
   <noscript>
-    <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/bootstrap-icons/bootstrap-icons.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}?ver=1.2.0" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome/css/all.min.css') }}?ver=1.2.0" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-icons/bootstrap-icons.css') }}?ver=1.2.0" rel="stylesheet">
+    <link href="{{ asset('css/aos.css') }}?ver=1.2.0" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}?ver=1.2.0" rel="stylesheet">
   </noscript>
 
   <!-- CSS Loading Script -->
@@ -145,10 +145,10 @@
       // Delay non-critical CSS loading
       setTimeout(function() {
         if (!document.querySelector('link[href*="bootstrap.min.css"]')) {
-          loadCSS('./css/bootstrap.min.css?ver=1.2.0');
+          loadCSS('{{ asset("css/bootstrap.min.css") }}?ver=1.2.0');
         }
         if (!document.querySelector('link[href*="all.min.css"]')) {
-          loadCSS('./css/font-awesome/css/all.min.css?ver=1.2.0');
+          loadCSS('{{ asset("css/font-awesome/css/all.min.css") }}?ver=1.2.0');
         }
       }, 100);
     });
@@ -193,7 +193,7 @@
       <div class="cover bg-light">
         <div class="container px-3">
           <div class="row">
-            <div class="col-lg-6 p-2"><img class="avatar img-fluid mt-2 ms-5" src="images/avatar.webp" width="450" height="500" alt="Berkant Karaca - Jr. Backend Developer ve Bilgisayar Mühendisi Profil Fotoğrafı" fetchpriority="high" /></div>
+            <div class="col-lg-6 p-2"><img class="avatar img-fluid mt-2 ms-5" src="{{ asset('images/avatar.webp') }}" width="450" height="500" alt="Berkant Karaca - Jr. Backend Developer ve Bilgisayar Mühendisi Profil Fotoğrafı" fetchpriority="high" /></div>
             <div class="col-lg-6">
               <div class="mt-5">
                 <p class="lead text-uppercase mb-1" data-aos="fade-right">Merhaba!</p>
@@ -277,7 +277,7 @@
                       <h3 class="h5 mb-1">Bandırma Onyedi Eylül Üniversitesi</h3>
                       <div class="h6 mb-1">Bilgisayar Mühendisliği </div>
                       <div class="text-muted text-small">2021 – 2025</div>
-                    </div><img src="images/services/ui-ux.svg" width="48" height="48" alt="ui-ux" />
+                    </div><img src="{{ asset('images/services/ui-ux.svg') }}" width="48" height="48" alt="ui-ux" />
                   </div>
                 </div>
                 <div class="card-body px-3">
@@ -297,7 +297,7 @@
                       <h3 class="h5 mb-1">Czestochowa University of Technology</h3>
                       <div class="h6 mb-1">Computer Science</div>
                       <div class="text-muted text-small">1 Dönem (4.5 ay)</div>
-                    </div><img src="images/services/ui-ux.svg" width="48" height="48" alt="app development" />
+                    </div><img src="{{ asset('images/services/ui-ux.svg') }}" width="48" height="48" alt="app development" />
                   </div>
                 </div>
                 <div class="card-body px-3 py-3">
@@ -595,20 +595,33 @@
               </p>
             </div>
             <div class="row">
-              <?php
-            //   $dir = 'images/certificates/';
-            //   $files = array_diff(scandir($dir), array('.', '..'));
-            //   foreach ($files as $file) {
-            //     echo '<div class="col-md-3 mb-4">';
-            //     echo '<div class="card" data-aos="fade" data-aos-delay="100">';
-            //     echo '<a href="#" data-bs-toggle="modal" data-bs-target="#certificateModal" data-bs-image="' . $dir . $file . '" class="image-hover">';
-            //     echo '<img src="' . $dir . $file . '" class="card-img-top" style="object-fit: cover; width: 235px; height: 166px;" alt="Certificate" loading="lazy">';
-            //     echo '<div class="overlay"><i class="fas fa-search-plus"></i></div>';
-            //     echo '</a>';
-            //     echo '</div>';
-            //     echo '</div>';
-            //   }
-              ?>
+              @php
+                $certificatesPath = public_path('images/certificates');
+                $certificates = [];
+                if (is_dir($certificatesPath)) {
+                  $files = array_diff(scandir($certificatesPath), array('.', '..'));
+                  $certificates = array_filter($files, function($file) use ($certificatesPath) {
+                    return is_file($certificatesPath . '/' . $file) && in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+                  });
+                }
+              @endphp
+              
+              @forelse($certificates as $certificate)
+                <div class="col-md-3 mb-4">
+                  <div class="card" data-aos="fade" data-aos-delay="100">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#certificateModal" data-bs-image="{{ asset('images/certificates/' . $certificate) }}" class="image-hover">
+                      <img src="{{ asset('images/certificates/' . $certificate) }}" class="card-img-top" style="object-fit: cover; width: 235px; height: 166px;" alt="Certificate" loading="lazy">
+                      <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </a>
+                  </div>
+                </div>
+              @empty
+                <div class="col-12">
+                  <div class="text-center">
+                    <p class="text-muted">Henüz sertifika eklenmemiş.</p>
+                  </div>
+                </div>
+              @endforelse
             </div>
           </div>
         </div>
@@ -756,13 +769,13 @@
     <div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon">
           <i class="fas fa-angle-up fa-x"></i></span></a>
     </div>
-    <script src="./scripts/imagesloaded.pkgd.min.js?ver=1.2.0"></script>
-    <script src="./scripts/masonry.pkgd.min.js?ver=1.2.0"></script>
-    <script src="./scripts/BigPicture.min.js?ver=1.2.0"></script>
-    <script src="./scripts/purecounter.min.js?ver=1.2.0"></script>
-    <script src="./scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
-    <script src="./scripts/aos.min.js?ver=1.2.0"></script>
-    <script src="./scripts/main.js?ver=1.2.0"></script>
+    <script src="{{ asset('scripts/imagesloaded.pkgd.min.js') }}?ver=1.2.0"></script>
+    <script src="{{ asset('scripts/masonry.pkgd.min.js') }}?ver=1.2.0"></script>
+    <script src="{{ asset('scripts/BigPicture.min.js') }}?ver=1.2.0"></script>
+    <script src="{{ asset('scripts/purecounter.min.js') }}?ver=1.2.0"></script>
+    <script src="{{ asset('scripts/bootstrap.bundle.min.js') }}?ver=1.2.0"></script>
+    <script src="{{ asset('scripts/aos.min.js') }}?ver=1.2.0"></script>
+    <script src="{{ asset('scripts/main.js') }}?ver=1.2.0"></script>
 
     <!-- Google tag (gtag.js) - Optimized for performance -->
     <script>
