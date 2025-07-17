@@ -19,7 +19,7 @@
                                     <i class="fas fa-user-circle text-gray-600 text-2xl mr-3"></i>
                                     <h4 class="text-lg font-semibold text-gray-900">About Yönetimi</h4>
                                 </div>
-                                <a href="{{ route('admin.about.index') }}" class="btn btn-dark">
+                                <a href="{{ route('admin.about.index') }}" class="btn btn-outline-dark">
                                     {{ __('Yönet') }}
                                     <i class="fas fa-arrow-right ml-2"></i>
                                 </a>

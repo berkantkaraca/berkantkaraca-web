@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('About Yönetimi') }}
             </h2>
-            <a href="{{ route('admin.about.create') }}" class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded">
+            <a href="{{ route('admin.about.create') }}" class="btn btn-outline-dark">
                 Yeni About Ekle
             </a>
         </div>
@@ -28,7 +28,6 @@
                                     <th class="py-2 px-4 border-b text-left">Başlık</th>
                                     <th class="py-2 px-4 border-b text-left">Açıklama (TR)</th>
                                     <th class="py-2 px-4 border-b text-left">Durum</th>
-                                    <th class="py-2 px-4 border-b text-left">Oluşturulma</th>
                                     <th class="py-2 px-4 border-b text-left">İşlemler</th>
                                 </tr>
                             </thead>
@@ -45,7 +44,6 @@
                                                 {{ $about->is_active ? 'Aktif' : 'Pasif' }}
                                             </span>
                                         </td>
-                                        <td class="py-2 px-4 border-b">{{ $about->created_at->format('d.m.Y H:i') }}</td>
                                         <td class="py-2 px-4 border-b">
                                             <div class="flex items-center space-x-2">
                                                 <a href="{{ route('admin.about.show', $about) }}" class="text-blue-600 hover:text-blue-800">

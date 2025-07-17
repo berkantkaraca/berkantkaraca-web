@@ -63,7 +63,7 @@ class AboutController extends Controller
 
         About::create($data);
 
-        return redirect()->route('about.index')->with('success', 'About bilgisi başarıyla eklendi.');
+        return redirect()->route('admin.about.index')->with('success', 'About bilgisi başarıyla eklendi.');
     }
 
     /**
@@ -133,7 +133,7 @@ class AboutController extends Controller
 
         $about->update($data);
 
-        return redirect()->route('about.index')->with('success', 'About bilgisi başarıyla güncellendi.');
+        return redirect()->route('admin.about.index')->with('success', 'About bilgisi başarıyla güncellendi.');
     }
 
     /**
@@ -157,6 +157,6 @@ class AboutController extends Controller
 
         $about->delete();
 
-        return redirect()->route('about.index')->with('success', 'About bilgisi başarıyla silindi.');
+        return redirect()->route('admin.about.index')->with('success', 'About bilgisi başarıyla silindi.');
     }
 }
