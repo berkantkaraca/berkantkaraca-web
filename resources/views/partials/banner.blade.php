@@ -6,7 +6,7 @@
         <div class="mt-5">
           <p class="lead text-uppercase mb-1" data-aos="fade-right">Merhaba!</p>
           <h1 class="intro-title marker" data-aos="fade-left">Ben, Berkant Karaca</h1>
-          <p class="lead fw-normal mt-3" data-aos="fade-up">Jr. Backend Developer & Bilgisayar Mühendisi</p>
+          <p class="lead fw-normal mt-3" data-aos="fade-up">Always Jr. Full Stack Developer & Bilgisayar Mühendisi</p>
           <div class="social-nav" data-aos="fade-up">
             <nav role="navigation">
               <ul class="nav justify-content-left">
