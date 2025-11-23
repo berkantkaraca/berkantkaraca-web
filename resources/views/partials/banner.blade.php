@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-6 p-2"><img class="avatar img-fluid mt-2 ms-5" src="{{ asset('images/avatar.webp') }}" width="450" height="500" alt="Berkant Karaca - Jr. Backend Developer ve Bilgisayar Mühendisi Profil Fotoğrafı" fetchpriority="high" /></div>
       <div class="col-lg-6">
-        <div class="mt-5">
+        <div class="mt-5"> 
           <p class="lead text-uppercase mb-1" data-aos="fade-right">Merhaba!</p>
           <h1 class="intro-title marker" data-aos="fade-left">Ben, Berkant Karaca</h1>
           <p class="lead fw-normal mt-3" data-aos="fade-up">Always Jr. Full Stack Developer & Bilgisayar Mühendisi</p>
